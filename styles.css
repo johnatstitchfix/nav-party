@@ -1,9 +1,18 @@
 * {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        box-sizing: border-box;
-    }
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.hide {
+    display: block;
+    left: -1000rem;
+    position: fixed;
+    top: -1000rem;
+    width: 0px;
+}
+
 body {
     background: #fff;
     color: #2F3237;
@@ -21,40 +30,201 @@ body {
 *:focus {
     background: rgba(205, 205, 206, 0.25);
     box-shadow: 0px 0px 0px 4px rgba(205, 205, 206, 0.25);
-    outline: thin dotted #2F3237;
+    outline: thin dotted #909295;
     outline-offset: 2px;
 }
+
+a {
+    transition: color 0.2s ease;
+}
+
+.nav--primary *:focus,
+.nav--secondary *:focus {
+    box-shadow: none;
+    outline-offset: 0px;
+}
+
 ul {
     list-style: none;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
 }
+
 a {
     text-decoration: none;
 }
+
 /*** NAV ***/
+.logo a {
+    background: url(img/logos/stitchfix-logo-mark--outline--color.svg);
+    display: block;
+    height: 2rem;
+    opacity: 1;
+    width: 2rem;
+    transition: opacity .2s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+
+.logo a:hover {
+    opacity: .75;
+}
 
 /*** PRIMARY NAV ***/
 .nav--primary {
     background: #2F3237;
-    display: flex;
-    justify-content: space-between;
     max-height: 3rem;
     padding: 0 1rem;
+    position: relative;
+    text-align: center;
 }
+
+.logo {
+    left: 16px;
+    position: absolute;
+    top: 8px;
+}
+
+.nav--primary__menu {
+    display: inline-block;
+}
+
 .nav--primary__menu li {
-    display: inline-block; 
+    display: inline-block;
     padding: 0 .5rem;
 }
+
 .nav--primary__menu li a {
     color: #DEE0E1;
     display: inline-block;
+    font-size: .875rem;
+    letter-spacing: 0.015em;
+    overflow: hidden;
     padding: 1rem 0;
+    position: relative;
+    text-transform: uppercase;
 }
+
+.nav--primary__menu li a:not(.current):hover {
+    color: #fff;
+}
+
+.nav--primary__menu li a.current {
+    color: #00BDB4;
+    font-weight: bold;
+    letter-spacing: .02em;
+}
+
+.nav--primary__menu li a:after {
+    background: #CDCDCE;
+    border-radius: 4px;
+    bottom: -8px;
+    content: '';
+    display: block;
+    left: 50%;
+    height: 8px;
+    position: absolute;
+    width: 8px;
+    transform: translateX(-50%);
+    transition: bottom 0.2s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+
+.nav--primary__menu li a:hover:after {
+    bottom: -4px;
+}
+
+.nav--primary__menu li a.current:after {
+    background: #00BDB4;
+    bottom: -4px;
+}
+
 /*** ACCOUNT MENY ***/
+.account-menu {
+    border-radius: 2px;
+    position: absolute;
+    right: 4px;
+    text-align: left;
+    top: 4px;
+}
+
+.account-menu a.account-menu__toggle {
+    color: #fff;
+    display: block;
+    font-weight: 500;
+    line-height: 1.5rem;
+    padding: .5rem .75rem .75rem;
+}
+
+.account-menu a.account-menu__toggle:after {
+    content: url(img/icon__ellipse.svg);
+    display: block;
+    position: absolute;
+    right: .75rem;
+    top: .625rem;
+}
+
+.account-menu__toggle__initial {
+    background: #00BDB4;
+    border-radius: .75rem;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    height: 1.5rem;
+    margin-right: .5rem;
+    width: 1.5rem;
+    text-align: center;
+}
+
 .account-menu a {
     color: #2F3237;
+    transition: all .2s ease;
+
 }
+
+.account-menu ul {
+    display: block;
+    padding: 1rem .25rem 1.5rem;
+}
+
+.account-menu ul + ul {
+    border-top: 1px solid #DEE0E1;
+    padding: 1.5rem .25rem;
+}
+
+.account-menu h2 {
+    color: #737679;
+    font-size: .875rem;
+    letter-spacing: .02em;
+    margin-bottom: 1rem;
+    padding: 0 .25rem;
+    text-transform: uppercase;
+}
+
+.account-menu ul a {
+    background: transparent;
+    display: block;
+    padding: .5rem;
+}
+
+.account-menu ul a:hover {
+    background: #F2F3F4;
+}
+.refer-bug {
+    background: #f2f3f4;
+    border-radius: 1rem;
+    padding: .125rem .5rem;
+}
+.account-menu ul a:hover .refer-bug {
+    background: #fff;
+}
+/*** Open State ***/
+.account-menu.open {
+    background: #fff;
+    box-shadow: 0px 0px 16px rgba(47, 50, 55, 0.05), 0px 2px 8px rgba(47, 50, 55, 0.075);
+}
+
+.account-menu.open a.account-menu__toggle {
+    color: #606266;
+}
+
 /*** SECONDARY NAV ***/
 .nav--secondary {
     background: #fff;
@@ -62,13 +232,22 @@ a {
     box-shadow: 0px 0px 4px rgba(47, 50, 55, 0.1);
     text-align: center;
 }
+
 .nav--secondary__menu li {
-    display: inline-block; 
+    display: inline-block;
     padding: 0 .5rem;
 }
+
 .nav--secondary__menu li a {
     color: #606266;
     display: inline-block;
     padding: 1rem 0;
 }
+
+.nav--secondary__menu li a.current {
+    border-bottom: 4px solid #00BDB4;
+    color: #2F3237;
+    font-weight: 500;
+}
+
 /*** Footer ***/
