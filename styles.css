@@ -136,13 +136,17 @@ a {
     bottom: -4px;
 }
 
-/*** ACCOUNT MENY ***/
+/*** ACCOUNT MENU ***/
 .account-menu {
     border-radius: 2px;
+    height: 2.5rem;
+    overflow: hidden;
     position: absolute;
     right: 4px;
     text-align: left;
     top: 4px;
+    transition: all .4s ease;
+    width: 4.25rem
 }
 
 .account-menu a.account-menu__toggle {
@@ -161,6 +165,13 @@ a {
     top: .625rem;
 }
 
+.account-menu .account-menu__toggle__name {
+    display: none;
+    opacity: 0;
+    transition: all .2s ease;
+    transition-delay: .5s;
+}
+
 .account-menu__toggle__initial {
     background: #00BDB4;
     border-radius: .75rem;
@@ -169,31 +180,48 @@ a {
     font-weight: bold;
     height: 1.5rem;
     margin-right: .5rem;
+    position: relative;
     width: 1.5rem;
     text-align: center;
 }
 
+.account-menu__toggle__initial:after {
+    background: #F05D61;
+    border-radius: .25rem;
+    content: '';
+    display: block;
+    height: .25rem;
+    position: absolute;
+    right: -.25rem;
+    top: .125rem;
+    width: .25rem;
+}
+
 .account-menu a {
     color: #2F3237;
-    transition: all .2s ease;
+    transition: background.2s ease;
 
 }
 
 .account-menu ul {
     display: block;
-    padding: 1rem .25rem 1.5rem;
+    min-width: 15rem;
+    opacity: 0;
+    padding: 1rem .25rem;
+    transition: all .2s ease;
+    transition-delay: .2s;
+    transform: translateY(-1rem);
 }
 
 .account-menu ul + ul {
     border-top: 1px solid #DEE0E1;
-    padding: 1.5rem .25rem;
 }
 
 .account-menu h2 {
     color: #737679;
     font-size: .875rem;
     letter-spacing: .02em;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     padding: 0 .25rem;
     text-transform: uppercase;
 }
@@ -201,28 +229,73 @@ a {
 .account-menu ul a {
     background: transparent;
     display: block;
-    padding: .5rem;
+    padding: .75rem .5rem;
 }
 
 .account-menu ul a:hover {
     background: #F2F3F4;
 }
+
+.profiles__child,
+.profiles__add-child {
+    line-height: 1.5rem;
+    position: relative;
+}
+
+.profiles__child .account-menu__toggle__initial {
+    background: #F05D61;
+}
+
+.profiles__add-child:before {
+    background: url(img/icon__add.svg);
+    content: '';
+    display: inline-block;
+    font-weight: bold;
+    height: 1.5rem;
+    margin-right: .5rem;
+    position: relative;
+    top: -.125rem;
+    width: 1.5rem;
+    vertical-align: middle;
+}
+
 .refer-bug {
     background: #f2f3f4;
     border-radius: 1rem;
     padding: .125rem .5rem;
+    transition: background .2s ease;
 }
+
 .account-menu ul a:hover .refer-bug {
-    background: #fff;
+    background: #DEE0E1;
 }
+
 /*** Open State ***/
 .account-menu.open {
     background: #fff;
+    border: 1px solid#F2F3F4;
     box-shadow: 0px 0px 16px rgba(47, 50, 55, 0.05), 0px 2px 8px rgba(47, 50, 55, 0.075);
+    height: auto;
+    width: 15rem;
+}
+.account-menu.open *:focus {
+    background: none;
 }
 
 .account-menu.open a.account-menu__toggle {
     color: #606266;
+}
+
+.account-menu.open .account-menu__toggle__name {
+    display: inline-block;
+    opacity: 1;
+    overflow: visible;
+    width: 0;
+}
+
+.account-menu.open ul {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /*** SECONDARY NAV ***/
