@@ -1,0 +1,74 @@
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-sizing: border-box;
+    }
+body {
+    background: #fff;
+    color: #2F3237;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Brandon Text", sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    line-height: 1rem;
+}
+
+*:focus {
+    background: rgba(205, 205, 206, 0.25);
+    box-shadow: 0px 0px 0px 4px rgba(205, 205, 206, 0.25);
+    outline: thin dotted #2F3237;
+    outline-offset: 2px;
+}
+ul {
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+a {
+    text-decoration: none;
+}
+/*** NAV ***/
+
+/*** PRIMARY NAV ***/
+.nav--primary {
+    background: #2F3237;
+    display: flex;
+    justify-content: space-between;
+    max-height: 3rem;
+    padding: 0 1rem;
+}
+.nav--primary__menu li {
+    display: inline-block; 
+    padding: 0 .5rem;
+}
+.nav--primary__menu li a {
+    color: #DEE0E1;
+    display: inline-block;
+    padding: 1rem 0;
+}
+/*** ACCOUNT MENY ***/
+.account-menu a {
+    color: #2F3237;
+}
+/*** SECONDARY NAV ***/
+.nav--secondary {
+    background: #fff;
+    border: 1px solid #F2F3F4;
+    box-shadow: 0px 0px 4px rgba(47, 50, 55, 0.1);
+    text-align: center;
+}
+.nav--secondary__menu li {
+    display: inline-block; 
+    padding: 0 .5rem;
+}
+.nav--secondary__menu li a {
+    color: #606266;
+    display: inline-block;
+    padding: 1rem 0;
+}
+/*** Footer ***/
