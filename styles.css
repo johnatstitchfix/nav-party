@@ -28,7 +28,7 @@ body {
 }
 
 *:focus {
-    background: rgba(205, 205, 206, 0.25);
+    background-color: rgba(205, 205, 206, 0.25);
     box-shadow: 0px 0px 0px 4px rgba(205, 205, 206, 0.25);
     outline: thin dotted #909295;
     outline-offset: 2px;
@@ -40,6 +40,7 @@ a {
 
 .nav--primary *:focus,
 .nav--secondary *:focus {
+    background-color: transparent;
     box-shadow: none;
     outline-offset: 0px;
 }
@@ -183,6 +184,7 @@ a {
     position: relative;
     width: 1.5rem;
     text-align: center;
+    transition: box-shadow .2s ease;
 }
 
 .account-menu__toggle__initial:after {
@@ -195,6 +197,12 @@ a {
     right: -.25rem;
     top: .125rem;
     width: .25rem;
+    transition: all .2s ease;
+}
+a.account-menu__toggle:hover .account-menu__toggle__initial {
+    -webkit-box-shadow: 0px 0px 0px 4px rgba(205, 205, 206, 0.25);
+    -moz-box-shadow: 0px 0px 0px 4px rgba(205, 205, 206, 0.25);
+    box-shadow: 0px 0px 0px 4px rgba(205, 205, 206, 0.25);
 }
 
 .account-menu a {
@@ -278,14 +286,18 @@ a {
     height: auto;
     width: 15rem;
 }
+
 .account-menu.open *:focus {
-    background: none;
+    background-color: none;
 }
 
 .account-menu.open a.account-menu__toggle {
     color: #606266;
 }
-
+.account-menu.open a.account-menu__toggle .account-menu__toggle__initial:after {
+    height: 0;
+    width: 0;
+}
 .account-menu.open .account-menu__toggle__name {
     display: inline-block;
     opacity: 1;
@@ -303,6 +315,7 @@ a {
     background: #fff;
     border: 1px solid #F2F3F4;
     box-shadow: 0px 0px 4px rgba(47, 50, 55, 0.1);
+    overflow: hidden;
     text-align: center;
 }
 
@@ -315,12 +328,36 @@ a {
     color: #606266;
     display: inline-block;
     padding: 1rem 0;
+    position: relative;
+    transition: all .2s ease;
 }
-
+.nav--secondary__menu li a:not(.current):after {
+    background: #F2F3F4;
+    bottom: -.5rem;
+    content: '';
+    display: block;
+    height: .25rem;
+    position: absolute;
+    transition: all .2s ease;
+    width: 100%;
+}
 .nav--secondary__menu li a.current {
     border-bottom: 4px solid #00BDB4;
     color: #2F3237;
     font-weight: 500;
 }
-
+.nav--secondary__menu a:hover {
+    color: #07838B;
+}
+.nav hr {
+        height: 0.25rem;
+        margin: 0;
+        background: black;
+        border: none;
+        transition: .3s ease-in-out;
+        display: block;        
+}
+.nav--secondary__menu li a:not(.current):hover:after {
+    bottom: -.25rem;
+}
 /*** Footer ***/
