@@ -545,6 +545,7 @@ footer h2 {
 .app-icon img {
     height: auto;
     max-width: 100%;
+    opacity: 1;
 }
 .footer__menu--small {
     color: #737679;
