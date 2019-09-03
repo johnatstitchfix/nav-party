@@ -549,13 +549,14 @@ footer h2 {
 }
 
 .footer__menu--social li a {
+    background-color: transparent;
     border-radius: 1.5rem;
     display: block;
     height: 3rem;
     position: relative;
     top: .25rem;
     width: 3rem;
-    transition: background .2s ease;
+    transition: background-color .2s ease;
 }
 
 .footer__menu--social li a img {
@@ -570,7 +571,7 @@ footer h2 {
 }
 
 .footer__menu--social li a:hover {
-    background: #F2F3F4;
+    background-color: #F2F3F4;
 }
 
 .footer__menu--social li a:hover img {
