@@ -155,8 +155,8 @@ header {
 
 .nav--primary__menu li a.current {
     color: #00BDB4;
-    font-family: "BrandonText-Bold";
-    font-weight: bold;
+    font-family:'BrandonText-Medium';
+    font-weight: 500;
     letter-spacing: .02em;
 }
 
