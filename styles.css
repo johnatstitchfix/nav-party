@@ -30,8 +30,8 @@ body {
 *:focus {
     background-color: rgba(205, 205, 206, 0.25);
     box-shadow: 0px 0px 0px 4px rgba(205, 205, 206, 0.25);
-    outline: thin dotted #909295;
-    outline-offset: 2px;
+    outline: 1px dotted #52B4E5;
+    outline-offset: 1px;
 }
 
 a {
@@ -57,13 +57,14 @@ a {
 
 /*** NAV ***/
 header {
-    position:fixed;
+    position: fixed;
     top: 0;
     transform: translateY(0);
     transition: transform 200ms ease;
     width: 100%;
     z-index: 500;
 }
+
 .logo a {
     background: url(img/logos/stitchfix-logo-mark--outline--color.svg);
     display: block;
@@ -298,7 +299,7 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
 }
 
 .account-menu.open *:focus {
-    background-color: none;
+            background-color: none;
 }
 
 .account-menu.open a.account-menu__toggle {
@@ -331,6 +332,11 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
     text-align: center;
 }
 
+.nav--secondary__menu {
+    display: inline-block;
+    position: relative;
+}
+
 .nav--secondary__menu li {
     display: inline-block;
     padding: 0 .25rem;
@@ -344,6 +350,7 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
     transition: all .2s ease;
 }
 
+/*PHASE 1
 .nav--secondary__menu li a:not(.current):after {
     background: #F2F3F4;
     bottom: -.5rem;
@@ -354,9 +361,9 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
     transition: all .2s ease;
     width: 100%;
 }
-
+*/
 .nav--secondary__menu li a.current {
-    border-bottom: 4px solid #00BDB4;
+    /*  border-bottom: 4px solid #00BDB4; PHASE 1*/
     color: #2F3237;
     font-weight: 500;
 }
@@ -365,18 +372,20 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
     color: #07838B;
 }
 
-.nav hr {
-    height: 0.25rem;
-    margin: 0;
-    background: black;
-    border: none;
-    transition: .3s ease-in-out;
+#page-underscore {
+    background: #00BDB4;
+    bottom: 0;
     display: block;
+    height: 4px;
+    position: absolute;
+    transition: all .3s ease-in;
 }
+
+/*PHASE 1
 
 .nav--secondary__menu li a:not(.current):hover:after {
     bottom: -.25rem;
-}
+}*/
 
 /*** FOOTER ***/
 footer {
@@ -413,6 +422,7 @@ footer {
     background: #077AB8;
     color: #fff;
 }
+
 .footer-toggle {
     background: #fff;
     color: #737679;
@@ -427,6 +437,7 @@ footer {
     text-transform: uppercase;
     width: auto;
 }
+
 .footer-toggle:after {
     background: url(img/icon__circle-plus.svg);
     background-size: contain;
@@ -441,9 +452,11 @@ footer {
     vertical-align: middle;
     transition: transform .15s ease;
 }
+
 .footer-toggle.close:after {
     transform: rotate(45deg);
 }
+
 .footer__main {
     border-top: 1px solid #DEE0E1;
     padding: 2.25rem 1rem 1rem;
@@ -457,9 +470,11 @@ footer {
     transition: opacity .5s ease;
     transition-delay: .15s;
 }
+
 .footer__main__wrapper.open {
     opacity: 1;
 }
+
 .footer__logo {
     display: none;
 }
@@ -510,10 +525,12 @@ footer h2 {
     text-align: left;
     width: 100%;
 }
+
 .footer__menu--social {
     margin-bottom: .5rem;
     min-width: 50%;
 }
+
 .footer__menu--social li {
     display: inline-block;
 }
@@ -546,15 +563,18 @@ footer h2 {
 .footer__menu--social li a:hover img {
     opacity: .85;
 }
+
 .app-icon {
     display: inline-block;
     width: 50%;
 }
+
 .app-icon img {
     height: auto;
     max-width: 100%;
     opacity: 1;
 }
+
 .footer__menu--small {
     color: #737679;
     font-size: .875rem;
@@ -576,10 +596,12 @@ footer h2 {
     color: #737679;
     padding: .25rem .25rem .25rem .375rem;
 }
+
 .footer__menu--small a:hover {
     color: #2F3237;
     text-decoration: underline;
 }
+
 .footer__menu--small p {
     margin-top: 1rem;
 }
