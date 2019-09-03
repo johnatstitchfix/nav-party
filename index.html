@@ -13,9 +13,10 @@
         <nav class="nav--primary">
             <h1 class="logo" alt="Stitch Fix"><a href="index.html"><span class="hide">Stitch Fix</span></a></h1>
             <ul class="nav--primary__menu">
-                <li><a href="index.html" class="current">Fixes</a></li>
-                <li><a href="shop/your-looks.html">Shop</a></li>
-                <li><a href="your-style/style-profile.html">Your Style</a></li>
+                <li><a href="index.html" class="current primary-nav__fixes">Fixes</a></li>
+                <li><a href="shop/your-looks.html" class="primary-nav__shop">Shop</a></li>
+                <li><a href="your-style/style-profile.html" class="primary-nav__your-style">Your Style</a></li>
+                <span id="top-level-dot"></span>
             </ul>
             <div class="account-menu"> <a href="#" class="account-menu__toggle"><span class="account-menu__toggle__initial">C</span><span class="account-menu__toggle__name">Christine</span></a>
                 <ul class="account-menu__profiles">
@@ -32,18 +33,20 @@
         </nav>
         <nav class="nav--secondary">
             <div class="sub-nav__wrapper">
-                <ul id="sub-nav__fixes" class="nav--secondary__menu">
-                    <li><a href="index.html" class="current">Your Fix</a></li>
-                    <li><a href="fixes/fix-inspiration.html">Fix Inspiration</a></li>
-                    <li><a href="fixes/extras.html">Extras</a></li>
-                </ul>
-                <ul id="sub-nav__shop" class="nav--secondary__menu">
-                    <li><a href="shop/your-looks.html">Your Looks</a></li>
-                    <li><a href="shop/new-colors.html">New Colors</a></li>
-                </ul>
-                <ul id="sub-nav__your-style" class="nav--secondary__menu">
-                    <li><a href="your-style/style-profile.html">Style Profile</a></li>
-                    <li><a href="your-style/kept-items.html">Kept Items</a></li>
+                <ul class="nav--secondary__menu">
+                    <ul id="sub-nav__fixes">
+                        <li><a href="index.html" class="current">Your Fix</a></li>
+                        <li><a href="fixes/fix-inspiration.html">Fix Inspiration</a></li>
+                        <li><a href="fixes/extras.html">Extras</a></li>
+                    </ul>
+                    <ul id="sub-nav__shop">
+                        <li><a href="shop/your-looks.html">Your Looks</a></li>
+                        <li><a href="shop/new-colors.html">New Colors</a></li>
+                    </ul>
+                    <ul id="sub-nav__your-style">
+                        <li><a href="your-style/style-profile.html">Style Profile</a></li>
+                        <li><a href="your-style/kept-items.html">Kept Items</a></li>
+                    </ul>
                 </ul>
                 <span id="page-underscore"></span>
             </div>
@@ -64,7 +67,9 @@
                     <li><a href="#">Women</a></li>
                     <li><a href="#">Men</a></li>
                     <li><a href="#">Kids</a></li>
-                    <li class="style-guide"><a href="#" class="style-guide-link">Style Guide</a><div class="tooltip"><a href="#">Women</a><a href="#">Men</a></div></li>
+                    <li class="style-guide"><a href="#" class="style-guide-link">Style Guide</a>
+                        <div class="tooltip"><a href="#">Women</a><a href="#">Men</a></div>
+                    </li>
                     <li><a href="#">iPhone App</a></li>
                     <li><a href="#">Contact Us</a></li>
                 </ul>

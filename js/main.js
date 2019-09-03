@@ -2,6 +2,11 @@ $(".account-menu__toggle").click(function (event) {
     event.preventDefault();
     $(".account-menu").toggleClass("open");
 });
+$(document).on("click", function (e) {
+    if ($(e.target).is(".account-menu, .account-menu__toggle, .account-menu__toggle__initial") === false) {
+        $(".account-menu").removeClass("open");
+    }
+});
 $(".footer-toggle").click(function (event) {
     event.preventDefault();
     $(".footer__main__wrapper").slideToggle();
@@ -12,32 +17,41 @@ $(".footer-toggle").click(function (event) {
 /*** Moving nav underscore ***/
 var underscoreWidth = $(".nav--secondary__menu li a.current").width();
 var underscoreLeft = $(".nav--secondary__menu li a.current").position();
-$('#page-underscore').css({"width": underscoreWidth, "left": underscoreLeft.left});
+$('#page-underscore').css({
+    "width": underscoreWidth,
+    "left": underscoreLeft.left
+});
 $(".nav--secondary__menu li a").hover(
     function () {
         var newWidth = $(this).width();
-        var newLeft = $(this).position(); 
-        $('#page-underscore').css({"width": newWidth, "left": newLeft.left});
+        var newLeft = $(this).position();
+        $('#page-underscore').css({
+            "width": newWidth,
+            "left": newLeft.left
+        });
     }
 );
 $(".nav--secondary__menu").mouseleave(
     function () {
-        $('#page-underscore').css({"width": underscoreWidth, "left": underscoreLeft.left});
+        $('#page-underscore').css({
+            "width": underscoreWidth,
+            "left": underscoreLeft.left
+        });
     }
 );
 
-/*** Nav transition on scroll ***/ 
+/*** Nav transition on scroll ***/
 // Hide Header on on scroll down
 var didScroll;
 var lastScrollTop = 0;
 var delta = 5;
 var navbarHeight = $('header').outerHeight();
 
-$(window).scroll(function(event){
+$(window).scroll(function (event) {
     didScroll = true;
 });
 
-setInterval(function() {
+setInterval(function () {
     if (didScroll) {
         hasScrolled();
         didScroll = false;
@@ -46,19 +60,19 @@ setInterval(function() {
 
 function hasScrolled() {
     var st = $(this).scrollTop();
-    
+
     // Make sure they scroll more than delta
-    if(Math.abs(lastScrollTop - st) <= delta)
+    if (Math.abs(lastScrollTop - st) <= delta)
         return;
-    
+
     // If they scrolled down and are past the navbar, add class .nav-up.
     // This is necessary so you never see what is "behind" the navbar.
-    if (st > lastScrollTop && st > navbarHeight){
+    if (st > lastScrollTop && st > navbarHeight) {
         // Scroll Down
         $('header').addClass('header--up');
     } else {
         // Scroll Up
-        if(st + $(window).height() < $(document).height()) {
+        if (st + $(window).height() < $(document).height()) {
             $('header').removeClass('header--up');
         }
     }
@@ -69,8 +83,8 @@ $('.style-guide-link').click(function (event) {
     event.preventDefault();
     $(".tooltip").toggleClass("active");
 });
- $(document).on("click", function(e) {
+$(document).on("click", function (e) {
     if ($(e.target).is(".tooltip, .style-guide-link, .style-guide") === false) {
-      $(".tooltip").removeClass("active");
+        $(".tooltip").removeClass("active");
     }
-  });
+});

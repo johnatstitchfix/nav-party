@@ -1,3 +1,23 @@
+@font-face {
+    font-family: BrandonText-Bold;
+    src: url(https://d3ss0gp3e5d7m3.cloudfront.net/assets/fonts/BrandonTextWeb-Bold._PwZM.woff2) format("woff2"), url(https://d3ss0gp3e5d7m3.cloudfront.net/assets/fonts/BrandonTextWeb-Bold.7ZmDR.woff) format("woff")
+}
+
+@font-face {
+    font-family: BrandonText-Italic;
+    src: url(https://d3ss0gp3e5d7m3.cloudfront.net/assets/fonts/BrandonText-Italic.2IP4J.woff) format("woff")
+}
+
+@font-face {
+    font-family: BrandonText-Regular;
+    src: url(https://d3ss0gp3e5d7m3.cloudfront.net/assets/fonts/BrandonText-Regular.wpoAR.woff) format("woff")
+}
+
+@font-face {
+    font-family: BrandonText-Medium;
+    src: url(https://d3ss0gp3e5d7m3.cloudfront.net/assets/fonts/BrandonTextWeb-Medium.2jqB8.woff2) format("woff2"), url(https://d3ss0gp3e5d7m3.cloudfront.net/assets/fonts/BrandonTextWeb-Medium.kVbI4.woff) format("woff")
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +39,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    font-family: "Brandon Text", sans-serif;
+    font-family: "BrandonText-Regular", "Brandon Text", sans-serif;
     font-size: 1rem;
     margin: 0;
     padding: 0;
@@ -109,6 +129,8 @@ header {
 
 .nav--primary__menu {
     display: inline-block;
+    overflow: hidden;
+    position: relative;
 }
 
 .nav--primary__menu li {
@@ -122,7 +144,7 @@ header {
     font-size: .875rem;
     letter-spacing: 0.015em;
     overflow: hidden;
-    padding: 1rem 0;
+    padding: 1rem 0 .875rem;
     position: relative;
     text-transform: uppercase;
 }
@@ -133,10 +155,25 @@ header {
 
 .nav--primary__menu li a.current {
     color: #00BDB4;
+    font-family: "BrandonText-Bold";
     font-weight: bold;
     letter-spacing: .02em;
 }
 
+#top-level-dot {
+    background: #00BDB4;
+    border-radius: .25rem;
+    bottom: -.25rem;
+    display: block;
+    left: 0;
+    height: .5rem;
+    position: absolute;
+    transition: left .3s ease;
+    width: .5rem;
+
+}
+
+/* PHASE 1
 .nav--primary__menu li a:after {
     background: #CDCDCE;
     border-radius: 4px;
@@ -159,7 +196,7 @@ header {
     background: #00BDB4;
     bottom: -4px;
 }
-
+*/
 /*** ACCOUNT MENU ***/
 .account-menu {
     border-radius: 2px;
@@ -177,6 +214,7 @@ header {
 .account-menu a.account-menu__toggle {
     color: #fff;
     display: block;
+    font-family: 'BrandonText-Medium';
     font-weight: 500;
     line-height: 1.5rem;
     padding: .5rem .75rem .75rem;
@@ -202,6 +240,7 @@ header {
     border-radius: .75rem;
     color: #fff;
     display: inline-block;
+    font-family: "BrandonText-Bold";
     font-weight: bold;
     height: 1.5rem;
     margin-right: .5rem;
@@ -283,6 +322,7 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
     background: url(img/icon__add.svg);
     content: '';
     display: inline-block;
+    font-family: "BrandonText-Bold";
     font-weight: bold;
     height: 1.5rem;
     margin-right: .5rem;
@@ -384,6 +424,7 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
 .nav--secondary__menu li a.current {
     /*  border-bottom: 4px solid #00BDB4; PHASE 1*/
     color: #2F3237;
+    font-family: 'BrandonText-Medium';
     font-weight: 500;
 }
 
@@ -408,7 +449,6 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
 .your-style-active #sub-nav__fixes,
 .your-style-active #sub-nav__shop {
     display: none;
-
 }
 
 /*PHASE 1
@@ -457,6 +497,7 @@ footer {
     background: #fff;
     color: #737679;
     display: inline-block;
+    font-family: "BrandonText-Bold";
     font-size: .875rem;
     font-weight: bold;
     letter-spacing: .02em;
@@ -558,12 +599,14 @@ footer h2 {
     transition: all .2s ease;
     z-index: -1;
 }
-.tooltip.active, 
+
+.tooltip.active,
 .style-guide:hover .tooltip {
     opacity: 1;
-    top:calc(-100% - .75rem);
+    top: calc(-100% - .75rem);
     z-index: 1;
 }
+
 .tooltip:after {
     border-left: .5rem solid transparent;
     border-right: .5rem solid transparent;
