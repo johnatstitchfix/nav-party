@@ -331,7 +331,10 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
     overflow: hidden;
     text-align: center;
 }
-
+.sub-nav__wrapper {
+    display: inline-block;
+    position: relative;
+}
 .nav--secondary__menu {
     display: inline-block;
     position: relative;
@@ -380,7 +383,17 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
     position: absolute;
     transition: all .3s ease-in;
 }
-
+/*** Secondary Nav Transitions ***/ 
+.fixes-active #sub-nav__shop, 
+.fixes-active #sub-nav__your-style, 
+.shop-active #sub-nav__fixes, 
+.shop-active #sub-nav__your-style,
+.your-style-active #sub-nav__fixes, 
+.your-style-active #sub-nav__shop 
+{
+    display: none;
+    
+}
 /*PHASE 1
 
 .nav--secondary__menu li a:not(.current):hover:after {
