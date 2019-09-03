@@ -62,6 +62,15 @@ function hasScrolled() {
             $('header').removeClass('header--up');
         }
     }
-    
     lastScrollTop = st;
 }
+/*** Tooltips ***/
+$('.style-guide-link').click(function (event) {
+    event.preventDefault();
+    $(".tooltip").toggleClass("active");
+});
+ $(document).on("click", function(e) {
+    if ($(e.target).is(".tooltip, .style-guide-link, .style-guide") === false) {
+      $(".tooltip").removeClass("active");
+    }
+  });
