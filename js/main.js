@@ -14,6 +14,7 @@ $(".footer-toggle").click(function (event) {
     $(".footer-toggle").toggleClass("close")
 });
 $(document).ready(function () {
+    $(".account-menu").css("transition", "all .4s ease"); // Adding this CSS here because otherwise it causes loading jank in Safari
     function navHighlighting() {
         /*** Moving nav dot ***/
         var dotLeft = $(".nav--primary__menu li a.current").position();
@@ -116,7 +117,7 @@ $(document).on("click", function (e) {
     }
 });
 /*** Fade out main on link clink ***/
-$('.nav--primary a, .nav--secondary a').click(function (event) {
+$('.nav--primary__menu a, .nav--secondary__menu a').click(function (event) {
     event.preventDefault();
     newLocation = this.href;
     $('main').addClass('disappear');
