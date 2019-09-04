@@ -851,7 +851,7 @@ footer h2 {
     margin-top: 1rem;
 }
 
-@media screen and (min-width:26.25rem) {
+@media screen and (min-width:35rem) {
     .footer__icons {
         padding: 1rem 0;
     }
@@ -984,6 +984,7 @@ footer h2 {
         text-align: left;
     }
     .footer__menu--social {
+        margin-bottom: 1.5rem;
         width: 100%;
         text-align: right;
     }
