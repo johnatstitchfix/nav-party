@@ -11,41 +11,48 @@
 <body>
     <header class="shop-active">
         <nav class="nav--primary">
-            <h1 class="logo" alt="Stitch Fix"><a href="../index.html"><span class="hide">Stitch Fix</span></a></h1>
-            <ul class="nav--primary__menu">
-                <li><a href="../index.html" class="primary-nav__fixes">Fixes</a></li>
-                <li><a href="your-looks.html" class="current primary-nav__shop">Shop</a></li>
-                <li><a href="../your-style/style-profile.html" class="primary-nav__your-style">Your Style</a></li>
-            </ul>
-            <div class="account-menu"> <a href="#" class="account-menu__toggle"><span class="account-menu__toggle__initial">C</span><span class="account-menu__toggle__name">Christine</span></a>
-                <ul class="account-menu__profiles">
-                    <h2>Switch Profiles</h2>
-                    <li><a href="#" class="profiles__child" tabindex="-1"><span class="account-menu__toggle__initial">R</span>Ramona</a></li>
-                    <li><a href="#" class="profiles__add-child" tabindex="-1">Add a kids profile</a></li>
+            <div class="nav--primary__wrapper">
+                <h1 class="logo" alt="Stitch Fix"><a href="../index.html"><span class="hide">Stitch Fix</span></a></h1>
+                <ul class="nav--primary__menu">
+                    <li><a href="../index.html" class="primary-nav__fixes">Fixes</a></li>
+                    <li><a href="your-looks.html" class="current primary-nav__shop">Shop</a></li>
+                    <li><a href="../your-style/style-profile.html" class="primary-nav__your-style">Your Style</a></li>
+                    <span id="top-level-dot"></span>
                 </ul>
-                <ul class="account-menu__settings">
-                    <li><a href="#" tabindex="-1">Account Settings</a></li>
-                    <li><a href="#" tabindex="-1">Refer <span class="refer-bug">Get $25</span></a></li>
-                    <li><a href="#" tabindex="-1">Sign Out</a></li>
-                </ul>
+                <a href="#" class="help-link">Help</a>
+                <div class="account-menu"> <a href="#" class="account-menu__toggle"><span class="account-menu__toggle__initial">C</span><span class="account-menu__toggle__name">Christine</span></a>
+                    <ul class="account-menu__profiles">
+                        <h2>Switch Profiles</h2>
+                        <li><a href="#" class="profiles__child" tabindex="-1"><span class="account-menu__toggle__initial">R</span>Ramona</a></li>
+                        <li><a href="#" class="profiles__add-child" tabindex="-1">Add a kids profile</a></li>
+                    </ul>
+                    <ul class="account-menu__settings">
+                        <li><a href="#" tabindex="-1">Account Settings</a></li>
+                        <li><a href="#" tabindex="-1">Refer <span class="refer-bug">Get $25</span></a></li>
+                        <li><a href="#" tabindex="-1">Sign Out</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <nav class="nav--secondary">
-            <div class="sub-nav__wrapper">
-                <ul id="sub-nav__fixes" class="nav--secondary__menu">
-                    <li><a href="../index.html">Your Fix</a></li>
-                    <li><a href="../fixes/fix-inspiration.html">Fix Inspiration</a></li>
-                    <li><a href="../fixes/extras.html">Extras</a></li>
-                </ul>
-                <ul id="sub-nav__shop" class="nav--secondary__menu">
-                    <li><a href="your-looks.html" class="current">Your Looks</a></li>
-                    <li><a href="new-colors.html">New Colors</a></li>
-                </ul>
-                <ul id="sub-nav__your-style" class="nav--secondary__menu">
-                    <li><a href="../your-style/your-style/style-profile.html">Style Profile</a></li>
-                    <li><a href="..your-style/your-style/kept-items.html">Kept Items</a></li>
-                </ul>
-                <span id="page-underscore"></span>
+            <div class="nav--secondary__wrapper">
+                <div class="sub-nav__wrapper">
+                    <ul id="sub-nav__fixes" class="nav--secondary__menu">
+                        <li><a href="../index.html">Your Fix</a></li>
+                        <li><a href="../fixes/fix-inspiration.html">Fix Inspiration</a></li>
+                        <li><a href="../fixes/extras.html">Extras</a></li>
+                    </ul>
+                    <ul id="sub-nav__shop" class="nav--secondary__menu">
+                        <li><a href="your-looks.html" class="current">Your Looks</a></li>
+                        <li><a href="new-colors.html">New Colors</a></li>
+                    </ul>
+                    <ul id="sub-nav__your-style" class="nav--secondary__menu">
+                        <li><a href="../your-style/your-style/style-profile.html">Style Profile</a></li>
+                        <li><a href="..your-style/your-style/kept-items.html">Kept Items</a></li>
+                    </ul>
+                    <span id="page-underscore"></span>
+                </div>
+                <a href="#" class="refer-link">Refer <span class="refer-bug">Get $25</span></a>
             </div>
         </nav>
     </header>
@@ -58,15 +65,18 @@
             <li><a href="#">Help</a></li>
         </ul> <a href="#" class="footer-toggle">More Info</a>
         <div class="footer__main">
-            <div class="footer__main__wrapper"> <a href="#" class="footer__logo">Stitch Fix</a>
+            <div class="footer__main__wrapper"> <a href="#" class="footer__logo" title="home"></a>
                 <ul class="footer__menu">
                     <h2>The Service</h2>
+                    <li><a href="#" class="hide-on-mobile">Gift Cards</a></li>
                     <li><a href="#">Women</a></li>
                     <li><a href="#">Men</a></li>
                     <li><a href="#">Kids</a></li>
-                    <li class="style-guide"><a href="#" class="style-guide-link">Style Guide</a><div class="tooltip"><a href="#">Women</a><a href="#">Men</a></div></li>
+                    <li class="style-guide"><a href="#" class="style-guide-link">Style Guide</a>
+                        <div class="tooltip"><a href="#">Women</a><a href="#">Men</a></div>
+                    </li>
                     <li><a href="#">iPhone App</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#" class="hide-on-desktop">Contact Us</a></li>
                 </ul>
                 <ul class="footer__menu">
                     <h2>Company</h2>
@@ -76,6 +86,12 @@
                     <li><a href="#">Influencer Program</a></li>
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">Tech Blog</a></li>
+                </ul>
+                <ul class="footer__menu hide-on-mobile">
+                    <h2>Questions?</h2>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
                 </ul>
                 <div class="footer__icons">
                     <ul class="footer__menu--social">
@@ -107,6 +123,9 @@
     </footer>
     <script>
         window.jQuery || document.write('<script src="../js/jquery-3.4.1.min.js"><\/script>')
+
     </script>
     <script src="../js/main.js"></script>
-</body></html>
+</body>
+
+</html>

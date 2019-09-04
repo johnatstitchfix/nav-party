@@ -3,7 +3,7 @@ $(".account-menu__toggle").click(function (event) {
     $(".account-menu").toggleClass("open");
 });
 $(document).on("click", function (e) {
-    if ($(e.target).is(".account-menu, .account-menu__toggle, .account-menu__toggle__initial") === false) {
+    if ($(e.target).is(".account-menu, .account-menu__toggle, .account-menu__toggle__initial, .account-menu__toggle__name") === false) {
         $(".account-menu").removeClass("open");
     }
 });
@@ -13,6 +13,28 @@ $(".footer-toggle").click(function (event) {
     $(".footer__main__wrapper").toggleClass("open");
     $(".footer-toggle").toggleClass("close")
 });
+/*** Moving nav dot ***/
+var dotLeft = $(".nav--primary__menu li a.current").position();
+var menuItemWidth = $(".nav--primary__menu li a.current").width();
+$('#top-level-dot').css({
+    "left": dotLeft.left + menuItemWidth / 2
+});
+$(".nav--primary__menu li a").hover(
+    function () {
+        var newDotLeft = $(this).position();
+        var newMenuItemWidth = $(this).width()
+        $('#top-level-dot').css({
+            "left": newDotLeft.left + newMenuItemWidth / 2
+        });
+    }
+);
+$(".nav--primary__menu").mouseleave(
+    function () {
+        $('#top-level-dot').css({
+            "left": dotLeft.left + menuItemWidth / 2
+        });
+    }
+);
 
 /*** Moving nav underscore ***/
 var underscoreWidth = $(".nav--secondary__menu li a.current").width();
@@ -88,3 +110,14 @@ $(document).on("click", function (e) {
         $(".tooltip").removeClass("active");
     }
 });
+/*** Fade out main on link clink ***/
+$('.nav--primary a, .nav--secondary a').click(function (event) {
+    event.preventDefault();
+    newLocation = this.href;
+    $('main').addClass('disappear');
+    setTimeout(newpage, 300);
+});
+
+function newpage() {
+    window.location = newLocation;
+}
