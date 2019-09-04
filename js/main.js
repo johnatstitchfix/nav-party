@@ -130,3 +130,7 @@ $('.nav--primary__menu a, .nav--secondary__menu a').click(function (event) {
 function newpage() {
     window.location = newLocation;
 }
+/*** Secondary nav transitions when click on a parent ***/
+$(".nav--primary__menu a").on("click", function () {
+    $(".sub-nav__wrapper").addClass("transition-out");
+});
