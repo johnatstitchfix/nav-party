@@ -7,6 +7,9 @@ $(document).on("click", function (e) {
         $(".account-menu").removeClass("open");
     }
 });
+$(".nav--primary__menu li a, .nav--secondary__menu li a").on("click", function () {
+    $(this).addClass("current");
+});
 $(".footer-toggle").click(function (event) {
     event.preventDefault();
     $(".footer__main__wrapper").slideToggle();

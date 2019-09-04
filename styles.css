@@ -53,7 +53,7 @@ main {
     align-content: center;
     justify-content: center;
     margin: 10rem auto 3rem;
-    max-width: 1280px;
+    max-width: 79.5rem;
     min-height: 300vh;
     text-align: center;
     width: calc(100% - 4rem);
@@ -198,7 +198,7 @@ header {
 
 /*** PRIMARY NAV ***/
 .nav--primary__wrapper {
-    max-width: 1440px;
+    max-width: 120rem;
     margin: 0 auto;
     position: relative;
 }
@@ -229,10 +229,11 @@ header {
 }
 
 .nav--primary__menu li a {
-    color: #DEE0E1;
+    color: #CDCDCE;
     display: inline-block;
+    font-family: 'BrandonText-Medium';
     font-size: .875rem;
-    letter-spacing: 0.015em;
+    letter-spacing: 0.02em;
     overflow: hidden;
     padding: 1rem 0 .875rem;
     position: relative;
@@ -245,8 +246,6 @@ header {
 
 .nav--primary__menu li a.current {
     color: #00BDB4;
-    font-family: 'BrandonText-Medium';
-    letter-spacing: .02em;
 }
 
 #top-level-dot {
@@ -503,7 +502,7 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
 }
 
 .nav--secondary__menu li a {
-    color: #606266;
+    color: #737679;
     display: inline-block;
     padding: 1rem 0;
     position: relative;
@@ -525,7 +524,6 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
 .nav--secondary__menu li a.current {
     /*  border-bottom: 4px solid #00BDB4; PHASE 1*/
     color: #2F3237;
-    font-family: 'BrandonText-Medium';
 }
 
 .nav--secondary__menu a:hover {
@@ -855,6 +853,7 @@ footer h2 {
     .footer__icons {
         padding: 1rem 0;
     }
+
     .footer__menu--social {
         border-bottom: none;
         margin-bottom: 0;
@@ -934,7 +933,7 @@ footer h2 {
     /*** Footer ***/
     .pre-footer-menu {
         margin: 0 auto;
-        max-width: calc(1280px + 4rem);
+        max-width: 83.5rem;
         padding: 0 2rem 2rem;
         text-align: right;
     }
@@ -951,7 +950,7 @@ footer h2 {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        max-width: 1280px;
+        max-width: 79.5rem;
         opacity: 1;
         top 0;
     }
@@ -983,11 +982,13 @@ footer h2 {
         padding: 0;
         text-align: left;
     }
+
     .footer__menu--social {
         margin-bottom: 1.5rem;
         width: 100%;
         text-align: right;
     }
+
     .footer__menu--social li a {
         height: 2.5rem;
         width: 2.5rem;
@@ -1016,7 +1017,7 @@ footer h2 {
 @media screen and (min-width:72.5rem) {
     .nav--secondary__wrapper {
         margin: 0 auto;
-        max-width: calc(1440px + 2rem);
+        max-width: 122rem;
         position: relative;
     }
 
