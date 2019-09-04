@@ -13,54 +13,59 @@ $(".footer-toggle").click(function (event) {
     $(".footer__main__wrapper").toggleClass("open");
     $(".footer-toggle").toggleClass("close")
 });
-/*** Moving nav dot ***/
-var dotLeft = $(".nav--primary__menu li a.current").position();
-var menuItemWidth = $(".nav--primary__menu li a.current").width();
-$('#top-level-dot').css({
-    "left": dotLeft.left + menuItemWidth / 2
-});
-$(".nav--primary__menu li a").hover(
-    function () {
-        var newDotLeft = $(this).position();
-        var newMenuItemWidth = $(this).width()
-        $('#top-level-dot').css({
-            "left": newDotLeft.left + newMenuItemWidth / 2
-        });
-    }
-);
-$(".nav--primary__menu").mouseleave(
-    function () {
+$(document).ready(function () {
+    function navHighlighting() {
+        /*** Moving nav dot ***/
+        var dotLeft = $(".nav--primary__menu li a.current").position();
+        var menuItemWidth = $(".nav--primary__menu li a.current").width();
         $('#top-level-dot').css({
             "left": dotLeft.left + menuItemWidth / 2
         });
-    }
-);
-
-/*** Moving nav underscore ***/
-var underscoreWidth = $(".nav--secondary__menu li a.current").width();
-var underscoreLeft = $(".nav--secondary__menu li a.current").position();
-$('#page-underscore').css({
-    "width": underscoreWidth,
-    "left": underscoreLeft.left
-});
-$(".nav--secondary__menu li a").hover(
-    function () {
-        var newWidth = $(this).width();
-        var newLeft = $(this).position();
-        $('#page-underscore').css({
-            "width": newWidth,
-            "left": newLeft.left
-        });
-    }
-);
-$(".nav--secondary__menu").mouseleave(
-    function () {
+        $(".nav--primary__menu li a").hover(
+            function () {
+                var newDotLeft = $(this).position();
+                var newMenuItemWidth = $(this).width()
+                $('#top-level-dot').css({
+                    "left": newDotLeft.left + newMenuItemWidth / 2
+                });
+            }
+        );
+        $(".nav--primary__menu").mouseleave(
+            function () {
+                $('#top-level-dot').css({
+                    "left": dotLeft.left + menuItemWidth / 2
+                });
+            }
+        );
+        /*** Moving nav underscore ***/
+        var underscoreWidth = $(".nav--secondary__menu li a.current").width();
+        var underscoreLeft = $(".nav--secondary__menu li a.current").position();
         $('#page-underscore').css({
             "width": underscoreWidth,
             "left": underscoreLeft.left
         });
+        $(".nav--secondary__menu li a").hover(
+            function () {
+                var newWidth = $(this).width();
+                var newLeft = $(this).position();
+                $('#page-underscore').css({
+                    "width": newWidth,
+                    "left": newLeft.left
+                });
+            }
+        );
+        $(".nav--secondary__menu").mouseleave(
+            function () {
+                $('#page-underscore').css({
+                    "width": underscoreWidth,
+                    "left": underscoreLeft.left
+                });
+            }
+        );
     }
-);
+    navHighlighting();
+    $(window).resize(navHighlighting);
+});
 
 /*** Nav transition on scroll ***/
 // Hide Header on on scroll down
