@@ -760,15 +760,18 @@ footer h2 {
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 2rem 0 1.5rem;
-    padding: 1rem 0;
+    margin: 1.5rem 0;
+    padding: .5rem 0 1rem;
     text-align: left;
     width: 100%;
 }
 
 .footer__menu--social {
-    margin-bottom: .5rem;
-    min-width: 50%;
+    border-bottom: 1px solid #DEE0E1;
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+    text-align: center;
+    width: 100%;
 }
 
 .footer__menu--social li {
@@ -808,6 +811,7 @@ footer h2 {
 .app-icon {
     display: inline-block;
     width: 50%;
+    text-align: center;
 }
 
 .app-icon img {
@@ -845,6 +849,23 @@ footer h2 {
 
 .footer__menu--small p {
     margin-top: 1rem;
+}
+
+@media screen and (min-width:26.25rem) {
+    .footer__icons {
+        padding: 1rem 0;
+    }
+    .footer__menu--social {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        text-align: left;
+        width: 50%;
+    }
+
+    .app-icon {
+        text-align: left;
+    }
 }
 
 @media screen and (min-width:56.25rem) {
@@ -962,7 +983,10 @@ footer h2 {
         padding: 0;
         text-align: left;
     }
-
+    .footer__menu--social {
+        width: 100%;
+        text-align: right;
+    }
     .footer__menu--social li a {
         height: 2.5rem;
         width: 2.5rem;
