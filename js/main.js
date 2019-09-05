@@ -131,6 +131,9 @@ function newpage() {
     window.location = newLocation;
 }
 /*** Secondary nav transitions when click on a parent ***/
-$(".nav--primary__menu a").on("click", function () {
+$(".nav--primary__menu a:not('.no-sub-nav')").on("click", function () {
     $(".sub-nav__wrapper").addClass("transition-out");
+});
+$("a.no-sub-nav").on("click", function () {
+    $(".nav--secondary").addClass("transition-out");
 });
