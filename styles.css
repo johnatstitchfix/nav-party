@@ -504,6 +504,7 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
 .nav--secondary__menu li a {
     color: #737679;
     display: inline-block;
+    font-family: 'BrandonText-Medium';
     padding: 1rem 0;
     position: relative;
     transition: color .2s ease;
@@ -549,16 +550,19 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
 }
 
 /*** Secondary Nav Transitions ***/
-.sub-nav__wrapper {
-    left: 0;
+.sub-nav__wrapper .nav--secondary__menu {
     opacity: 1;
-    animation: slidein .2s;
-    position: relative;
-    transition: left .2s ease, opacity .2s ease;
+    top: 0;
+    transition: top .2s ease, opacity .2s ease;
 }
-.sub-nav__wrapper.transition-out {
+
+.sub-nav__wrapper.transition-out .nav--secondary__menu {
     opacity: 0;
-    left: -1rem;
+    top: -.5rem;
+}
+.sub-nav__wrapper.transition-out #page-underscore{
+    opacity: 0;
+    bottom: -.25rem;
 }
 .fixes-active #sub-nav__shop,
 .fixes-active #sub-nav__your-style,
@@ -568,17 +572,7 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
 .your-style-active #sub-nav__shop {
     display: none;
 }
-@keyframes slidein {
-    from {
-        opacity: 0;
-        left: 1rem;
-    }
 
-    to {
-        opacity: 1;
-        left: 0;
-    }
-}
 /*PHASE 1
 
 .nav--secondary__menu li a:not(.current):hover:after {
