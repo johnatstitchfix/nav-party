@@ -100,11 +100,11 @@ function hasScrolled() {
     // This is necessary so you never see what is "behind" the navbar.
     if (st > lastScrollTop && st > navbarHeight) {
         // Scroll Down
-        $('header').addClass('header--up');
+        $('body:not(".no-sub-nav") header').addClass('header--up');
     } else {
         // Scroll Up
         if (st + $(window).height() < $(document).height()) {
-            $('header').removeClass('header--up');
+            $('body:not(".no-sub-nav") header').removeClass('header--up');
         }
     }
     lastScrollTop = st;
@@ -131,9 +131,12 @@ function newpage() {
     window.location = newLocation;
 }
 /*** Secondary nav transitions when click on a parent ***/
-$(".nav--primary__menu a:not('.no-sub-nav')").on("click", function () {
-    $(".sub-nav__wrapper").addClass("transition-out");
+$('.nav--primary__menu a').on("click", function () {
+    $(".nav--secondary__wrapper").addClass("transition-out");
 });
-$("a.no-sub-nav").on("click", function () {
-    $(".nav--secondary").addClass("transition-out");
+$(".nav--primary__menu a.no-sub-nav").on("click", function () {
+    $("body").addClass("no-sub-nav");
+});
+$(".nav--primary__menu a:not(.no-sub-nav)").on("click", function () {
+    $("body").removeClass("no-sub-nav");
 });
