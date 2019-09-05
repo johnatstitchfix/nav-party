@@ -71,9 +71,11 @@ main {
     /* Opera < 12.1 */
     animation: fadein .2s;
 }
+
 .no-sub-nav main {
     margin: 3rem auto 3rem;
 }
+
 main.disappear {
     top: -2rem;
     opacity: 0;
@@ -184,6 +186,7 @@ header {
 .no-sub-nav header {
     position: relative;
 }
+
 .header--up {
     transform: translateY(-3rem);
 }
@@ -794,13 +797,12 @@ footer h2 {
 }
 
 .footer__icons {
-    border-bottom: 1px solid #DEE0E1;
     border-top: 1px solid #DEE0E1;
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 1.5rem 0;
-    padding: .5rem 0 1rem;
+    padding: .5rem 0 0;
     text-align: left;
     width: 100%;
 }
@@ -892,6 +894,7 @@ footer h2 {
 
 @media screen and (min-width:35rem) {
     .footer__icons {
+        border-bottom: 1px solid #DEE0E1;
         padding: 1rem 0;
     }
 
