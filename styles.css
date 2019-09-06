@@ -449,7 +449,7 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
     background: #DEE0E1;
 }
 
-/*** Open State ***/
+/*** Account Menu Open State ***/
 .account-menu.open {
     background: #fff;
     border: 1px solid#F2F3F4;
