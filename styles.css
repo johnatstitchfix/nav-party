@@ -442,9 +442,11 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
     background: #f2f3f4;
     border-radius: 1rem;
     padding: .125rem .5rem;
+    transition: background-color .2s ease;
+}
+footer .refer-bug {
     transition: all .2s ease;
 }
-
 .account-menu ul a:hover .refer-bug {
     background: #DEE0E1;
 }
@@ -454,7 +456,7 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
     background: #fff;
     border: 1px solid#F2F3F4;
     box-shadow: 0px 0px 16px rgba(47, 50, 55, 0.05), 0px 2px 8px rgba(47, 50, 55, 0.075);
-    height: 22.5rem;
+    height: 24.75rem;
     width: 15rem;
 }
 
@@ -539,15 +541,21 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
     color: #07838B;
 }
 
-.nav--secondary .refer-link {
-    color: #2F3237;
+.nav--primary .refer-link {
+    color: #DEE0E1;
     display: none;
     position: absolute;
-    right: 1rem;
+    right: 10.5rem;
     top: 50%;
     transform: translateY(-50%);
+    transition: color .2s ease;
 }
-
+.nav--primary .refer-link:hover {
+    color: #fff;
+}
+.nav--primary .refer-bug {
+    background-color: #606266;
+}
 #page-underscore {
     background: #00BDB4;
     bottom: 0;
@@ -951,7 +959,7 @@ footer h2 {
     }
 
     .account-menu.open {
-        height: 23.5rem;
+        height: 25.75rem;
     }
 
     .account-menu a.account-menu__toggle {
@@ -1074,9 +1082,8 @@ footer h2 {
         display: block;
     }
 
-    .nav--secondary .refer-link {
+    .nav--primary .refer-link {
         display: block;
-        right: 2rem;
     }
 
     .account-menu .refer-link {
@@ -1084,17 +1091,7 @@ footer h2 {
     }
 
     .account-menu.open {
-        height: 21.5rem;
-    }
-
-    a.help-link {
-        color: #DEE0E1;
-        display: block;
-        font-size: 1rem;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 10.5rem;
+        height: 23.75rem;
     }
 
     .nav--secondary .refer-link:hover .refer-bug {
