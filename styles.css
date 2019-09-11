@@ -439,14 +439,16 @@ a.account-menu__toggle:hover .account-menu__toggle__initial {
 }
 
 .refer-bug {
-    background: #f2f3f4;
+    background: #DEE0E1;
     border-radius: 1rem;
     padding: .125rem .5rem;
     transition: background-color .2s ease;
 }
+
 footer .refer-bug {
     transition: all .2s ease;
 }
+
 .account-menu ul a:hover .refer-bug {
     background: #DEE0E1;
 }
@@ -541,7 +543,7 @@ footer .refer-bug {
     color: #07838B;
 }
 
-.nav--primary .refer-link {
+.nav--primary .refer-link.external {
     color: #DEE0E1;
     display: none;
     position: absolute;
@@ -550,12 +552,23 @@ footer .refer-bug {
     transform: translateY(-50%);
     transition: color .2s ease;
 }
-.nav--primary .refer-link:hover {
+
+.nav--primary .account-menu .refer-link {
+    display: block;
+}
+
+.nav--primary .account-menu .refer-link .refer-bug {
+    background: #DEE0E1;
+}
+
+.nav--primary .refer-link.external:hover {
     color: #fff;
 }
+
 .nav--primary .refer-bug {
     background-color: #606266;
 }
+
 #page-underscore {
     background: #00BDB4;
     bottom: 0;
@@ -900,6 +913,139 @@ footer h2 {
     margin-top: 1rem;
 }
 
+/*--- FIB ---*/
+.fib {
+    margin: 9rem auto 3.5rem;
+    max-width: 79.5rem;
+    min-height: calc(100vh - 126px - 12.5rem);
+    padding: 0 1rem;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.fib h1 {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    margin-bottom: .75rem;
+}
+
+.fib p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.floating-action {
+    background: #FFFFFF url(img/icons/icons/ui-icons/add-photo--32px.svg) no-repeat center;
+    border: 1px solid #DEE0E1;
+    border-radius: 2530px;
+    bottom: 1rem;
+    box-shadow: 0px 0px 16px rgba(47, 50, 55, 0.05), 0px 2px 8px rgba(47, 50, 55, 0.075);
+    color: #fff;
+    font-family: BrandonText-Medium;
+    height: 3.5rem;
+    letter-spacing: .02em;
+    width: 3.5rem;
+    position: fixed;
+    /* elevation/elevation-2 */
+    right: 1rem;
+    transition: all .2s ease;
+}
+
+.floating-action span {
+    opacity: 0;
+}
+
+.nav--tertiary {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 1.25rem;
+    box-shadow: 0px 0px 16px rgba(47, 50, 55, 0), 0px 2px 8px rgba(47, 50, 55, 0);
+    display: inline-block;
+    margin-top: .75rem;
+    min-width: 18.75rem;
+    padding: 0 .5rem;
+    transition: background .2s ease, border .2s ease, box-shadow .2s ease;
+}
+
+.nav--tertiary.stuck {
+    background: #FFFFFF;
+    border: 1px solid #F2F3F4;
+    box-shadow: 0px 0px 16px rgba(47, 50, 55, 0.05), 0px 2px 8px rgba(47, 50, 55, 0.075);
+    display: block;
+    left: 50%;
+    position: fixed;
+    top: 6.25rem;
+    transform: translateX(-50%);
+    transition: top 500ms ease, background .2s ease, border .2s ease, box-shadow .2s ease;
+    width: auto;
+    z-index: 100;
+}
+
+.nav--tertiary.stuck.nav--up {
+    top: 3.25rem;
+}
+
+.nav--tertiary li {
+    display: inline-block;
+}
+
+.nav--tertiary a {
+    color: #737679;
+    display: inline-block;
+    font-family: BrandonText-Medium;
+    padding: .75rem .5rem .5rem;
+}
+
+.inspiration-board:before {
+    content: url(img/icons/icons/ui-icons/bookmark-fill.svg);
+    display: inline-block;
+    margin-right: .25rem;
+    vertical-align: middle;
+}
+
+.outfit-ideas:before {
+    background: url(img/icons/grid-unfilled.svg);
+    background-size: contain;
+    content: '';
+    display: inline-block;
+    height: 1.25rem;
+    margin-right: .25rem;
+    transition: background .2s ease;
+    width: 1.25rem;
+    vertical-align: middle;
+}
+
+.outfit-ideas:hover:before {
+    background: url(img/icons/grid-unfilled--hover.svg);
+    background-size: contain;
+}
+
+
+.nav--tertiary a:hover {
+    color: #2F3237;
+}
+
+.nav--tertiary a.current {
+    color: #07838B;
+}
+
+.fib-tiles {
+    margin-top: 1.75rem;
+}
+
+.fib-tiles li {
+    display: inline-block;
+    width: 100%;
+}
+
+.fib-tiles li img {
+    border: 1px solid #f2f3f4;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: auto;
+}
+
 @media screen and (min-width:35rem) {
     .footer__icons {
         border-bottom: 1px solid #DEE0E1;
@@ -916,6 +1062,12 @@ footer h2 {
 
     .app-icon {
         text-align: left;
+    }
+
+    /*--- FIB ---*/
+    .fib-tiles {
+        column-count: 2;
+        column-gap: 1rem;
     }
 }
 
@@ -1068,6 +1220,83 @@ footer h2 {
         padding-top: 1.5rem;
         width: 100%;
     }
+
+    /*** FIB ***/
+    .nav--tertiary a {
+        font-size: 1.125rem;
+        line-height: 1.25rem;
+        padding: .75rem .5rem .625rem;
+    }
+
+    .nav--tertiary {
+        border-radius: 1.5rem;
+        margin-top: .75rem;
+        padding: 0 1rem;
+    }
+
+    .nav--tertiary.stuck {
+        top: 7.25rem;
+    }
+
+    .nav--tertiary.stuck.nav--up {
+        top: 3.5rem;
+    }
+
+    .inspiration-board:before {
+        content: url(img/icons/icons/ui-icons/bookmark-fill.svg);
+        display: inline-block;
+        margin-right: .5rem;
+        vertical-align: middle;
+    }
+
+    .outfit-ideas:before {
+        background: url(img/icons/grid-unfilled.svg) center no-repeat;
+        height: 1.125rem;
+        margin-right: .5rem;
+        position: relative;
+        top: -.125rem;
+        width: 1.125rem;
+    }
+
+    .outfit-ideas:hover:before {
+        background: url(img/icons/grid-unfilled--hover.svg) center no-repeat;
+    }
+
+    .fib {
+        margin: 11rem auto 5rem;
+    }
+
+    .fib h1 {
+        font-size: 2.25rem;
+        line-height: 3rem;
+    }
+
+    .fib p {
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .fib-tiles {
+        column-count: 3;
+    }
+
+    .floating-action {
+        background: #07838B url(img/icons/icons/ui-icons/add-photo--32px-white.svg) no-repeat 24px center;
+        border: 1px solid rgba(47, 50, 55, 0.25);
+        bottom: 2rem;
+        height: 3rem;
+        width: auto;
+        padding: 1rem 1.5rem 1rem 3.5rem;
+        position: fixed;
+        /* elevation/elevation-2 */
+        right: 2rem;
+        transition: all .2s ease;
+    }
+
+    .floating-action span {
+        opacity: 1;
+    }
 }
 
 @media screen and (min-width:72.5rem) {
@@ -1086,7 +1315,7 @@ footer h2 {
         display: block;
     }
 
-    .account-menu .refer-link {
+    .nav--primary .account-menu .refer-link {
         display: none;
     }
 
@@ -1134,5 +1363,11 @@ footer h2 {
         float: right;
         margin-left: 2rem;
         margin-top: .625rem;
+    }
+
+    /*** FIB ***/
+    .fib-tiles {
+        column-count: 4;
+        column-gap: 1rem;
     }
 }

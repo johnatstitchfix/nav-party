@@ -76,6 +76,12 @@ var didScroll;
 var lastScrollTop = 0;
 var delta = 5;
 var navbarHeight = $('header').outerHeight();
+var tertiaryNav = $(".nav--tertiary").position();
+if ($('.nav--tertiary').length) {
+    var tertiaryNavTop = tertiaryNav.top;
+} else {
+    var tertiaryNavTop = 0;
+}
 
 $(window).scroll(function (event) {
     didScroll = true;
@@ -86,7 +92,7 @@ setInterval(function () {
         hasScrolled();
         didScroll = false;
     }
-}, 250);
+}, 150);
 
 function hasScrolled() {
     var st = $(this).scrollTop();
@@ -97,15 +103,26 @@ function hasScrolled() {
 
     // If they scrolled down and are past the navbar, add class .nav-up.
     // This is necessary so you never see what is "behind" the navbar.
-    if (st > lastScrollTop && st > navbarHeight) {
+
+    if (st > lastScrollTop && st > navbarHeight + tertiaryNavTop + 24) {
         // Scroll Down
         $('body:not(".no-sub-nav") header').addClass('header--up');
+        $('.nav--tertiary.stuck').addClass('nav--up');
     } else {
         // Scroll Up
         if (st + $(window).height() < $(document).height()) {
             $('body:not(".no-sub-nav") header').removeClass('header--up');
+            $('.nav--tertiary.stuck').removeClass('nav--up');
         }
     }
+    // If they scrolled to the tertiary nav, add class nav--up.
+    if (st > lastScrollTop && st > tertiaryNavTop - navbarHeight - 24) {
+        $('.nav--tertiary').addClass('stuck');
+    }
+    if (st < lastScrollTop && st < tertiaryNavTop) {
+        $('.nav--tertiary').removeClass('stuck');
+    }
+
     lastScrollTop = st;
 }
 
