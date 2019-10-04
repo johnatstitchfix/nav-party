@@ -1312,7 +1312,7 @@ footer h2 {
         display: block;
     }
 
-    .nav--primary .refer-link {
+    .nav--primary .refer-link.external {
         display: block;
     }
 
